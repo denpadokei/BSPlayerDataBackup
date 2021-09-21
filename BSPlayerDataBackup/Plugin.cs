@@ -42,7 +42,7 @@ namespace BSPlayerDataBackup
                 if (!Directory.Exists(Path.GetDirectoryName(descPath))) {
                     Directory.CreateDirectory(Path.GetDirectoryName(descPath));
                 }
-                Log.Info($"Start backup : {descPath}");
+                Log.Info($"Start backup : Source {Application.persistentDataPath}, Dest {descPath}");
                 this.Copy(Application.persistentDataPath, tmpPath);
                 if (File.Exists($"{descPath}.zip")) {
                     File.Delete($"{descPath}.zip");
